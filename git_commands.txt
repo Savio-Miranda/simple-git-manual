@@ -68,18 +68,17 @@ According to the book "Pro Git" ("https://git-scm.com/book/en/v2") found in the 
 
 * Modified - when the file is modified but not marked to be committed (safe in your local database).
 * Staged - when the file has been modified and is ready (marked) to be commited.
-* Commited - when the file is saved as it is in the your local database.
+* Commited - when the file is saved as it is in your local database.
 
 When we create a repository, all the files in it are not yet tracked. This means that Git doesn't know wich files in the working tree (workspace) it should follow.
 To change that, we need to add those files in the staging area (staging area is a file in the repository that stores the information of what modified files you want to be commited).
-Only when added to the stagin area you can finally commit the changes. A reminder: after the first commit, only modified files can be commited in a second commit, but Git knows the existence of other files in the working tree.
+Only when added to the staging area you can finally commit the changes. A reminder: after the first commit, only modified files can be commited in a second commit, but Git knows the existence of other files in the working tree.
 The repositories are local databases. So you might lose data if something happens to you disk. To prevent this scenario, we could use any platform to store code in online repositories. I'm using GitHub for this git test.
 '''
 
 # Before the first commit, there's still one more file that you should be aware of: the .gitignore file. In every project some of the files and directories are not meant to be in the staging area.
 
 # To hide this files and directories in your repository, create a .gitignore file and put the name of every file or directory you don't want to commit in it.
-
 
 # We're ready to our first commit. Add the files that you want in the staging area. So type on terminal: "git add <filename>"
 
@@ -94,3 +93,15 @@ The repositories are local databases. So you might lose data if something happen
 # Create your online repository and copy it's link. My is this one: "https://github.com/Savio-Miranda/simple-git-manual.git"
 
 # In this line, i'm going to commit right now. You may check the commits in my public repository on GitHub.
+
+# To start pushing your commit to your online repository, type on terminal "git remote add origin  <online repository URL>". This line will conect your local repository to your online one.
+
+# Now that your origin is set, check if it's correct typing "git remote -v".
+'''
+Something like this should appear:
+C:\Users\Savio Miranda\VS Code Projects\Python Projects\Testing Git>git remote -v
+origin  https://github.com/Savio-Miranda/simple-git-manual.git (fetch)
+origin  https://github.com/Savio-Miranda/simple-git-manual.git (push)
+'''
+
+# The final step is to type "git push origin master". This will push your commit. Just refresh your remote repository to see if your commit is there.
