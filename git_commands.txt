@@ -1,0 +1,96 @@
+# Today we're learning git set ups and commands to use on a daily basis.
+
+# First installed Git at "https://git-scm.com/downloads".
+
+# *** We're using git in VS Code for this git test, so you need to create a Workspace in this editor to begin with. ***
+
+# In the Workspace of your choosing, create a file to test git. This can be any file. I'm using this one.
+
+# The goal here is to send this file to your GitHub account using git commands on terminal.
+
+# The first thing that we need to do is to set up our user.name and user.email.
+
+# Type this line on your terminal: "git config --global user.name <Your Name>" and "git config --global user.email <Your Email>".
+
+# To check if everything is correct, use the line "git config --list" on terminal.
+
+'''
+You may find the following:
+    C:\Users\Savio Miranda\VS Code Projects\Python Projects\Testing Git>git config --list
+    diff.astextplain.textconv=astextplain
+    filter.lfs.clean=git-lfs clean -- %f
+    filter.lfs.smudge=git-lfs smudge -- %f
+    filter.lfs.process=git-lfs filter-process
+    filter.lfs.required=true
+    http.sslbackend=openssl
+    http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+    core.autocrlf=true
+    core.fscache=true
+    core.symlinks=false
+    pull.rebase=false
+    init.defaultbranch=master
+    core.editor=C:\Users\Savio Miranda\AppData\Local\Programs\Microsoft VS Code\bin\code
+    user.name=Savio Miranda
+    user.email=saviosousamm68@gmail.com
+    core.repositoryformatversion=0
+    core.filemode=false
+    core.bare=false
+    core.logallrefupdates=true
+    core.symlinks=false
+    core.ignorecase=true
+'''
+
+# Notice that my name and email are already there.
+
+# Ok, the initial set up is ready and we only do this once. We must create the git repository now. But you may change this initial set up at any time aswell.
+
+# To create the git repository, type "git init".
+
+# Remember: this will create the repository inside the root, so pay attention to that. Otherwise, you may want to create a new directory typing "git init <dir name>".
+
+# Now the repository is existing locally. The default branch is called "master" and can be seen on the lower left corner of VS Code.
+
+'''
+The master branch is the most important branch in a version control.
+Any major project works with different branches that convey on the master branch.
+The big ideia is to add only reviewed code to the master branch.
+The rest of development code are produced in other branches where they can not harm the main code.
+But since we're only learning, we'll stick to the master branch to keep it simple.
+'''
+
+# We have git installed, our initial set up done and the repository inside the workspace. What now?
+
+# When you're done editing your files, you should do your first commit.
+
+# What are commits?
+'''
+According to the book "Pro Git" ("https://git-scm.com/book/en/v2") found in the documentation section of "https://git-scm.com", Git works with three stages main stages:
+
+* Modified - when the file is modified but not marked to be committed (safe in your local database).
+* Staged - when the file has been modified and is ready (marked) to be commited.
+* Commited - when the file is saved as it is in the your local database.
+
+When we create a repository, all the files in it are not yet tracked. This means that Git doesn't know wich files in the working tree (workspace) it should follow.
+To change that, we need to add those files in the staging area (staging area is a file in the repository that stores the information of what modified files you want to be commited).
+Only when added to the stagin area you can finally commit the changes. A reminder: after the first commit, only modified files can be commited in a second commit, but Git knows the existence of other files in the working tree.
+The repositories are local databases. So you might lose data if something happens to you disk. To prevent this scenario, we could use any platform to store code in online repositories. I'm using GitHub for this git test.
+'''
+
+# Before the first commit, there's still one more file that you should be aware of: the .gitignore file. In every project some of the files and directories are not meant to be in the staging area.
+
+# To hide this files and directories in your repository, create a .gitignore file and put the name of every file or directory you don't want to commit in it.
+
+
+# We're ready to our first commit. Add the files that you want in the staging area. So type on terminal: "git add <filename>"
+
+# If you have more than one file and want to add everyone at once, type "git add .". This line will add every other file and directory in your workspace (except for the .gitignore files).
+
+# WATCH OUT! If you use "git add .", your .gitignore wil be added to the staging area. To remove any file or directory from the staging area use the line "git rm --cached <file>".
+
+# With the files in the staging area, let's make our first commmit. Type "git commit -m "My first commit".
+
+# So far, so good. Now we need to push this commit to a online repository. For me, is in GitHub.
+
+# Create your online repository and copy it's link. My is this one: "https://github.com/Savio-Miranda/simple-git-manual.git"
+
+# In this line, i'm going to commit right now. You may check the commits in my public repository on GitHub.
